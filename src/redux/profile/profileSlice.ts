@@ -18,7 +18,7 @@ export const getProfile=createAsyncThunk<Profile>(
     'profile/get',
     async(_,thunkAPI)=>{
         try{
-            const res=await api.get('/profile')
+            const res=await api.get('users/profile')
             return res.data
         }
         catch(err:any){
@@ -31,7 +31,7 @@ export const updateProfile=createAsyncThunk<Profile,Partial<Profile>>(
     'profile/update',
     async(profileData,thunkAPI)=>{
         try{
-            const res=await api.patch('/profile',profileData)
+            const res=await api.patch('users/profile',profileData)
             return res.data
         }
         catch(err:any){
